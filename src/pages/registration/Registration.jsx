@@ -9,15 +9,23 @@ function Registration() {
     const [mobile, setMobile] = useState();
     const [shareData, setShareData] = useState(false);
 
-    const handleSubmit = () => {
-        console.log({ name, username, email, mobile, shareData });
-    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!name || !username || !email || !mobile  || !shareData) {
+            alert("Please fill all fields");
+        } else {
+            const currentUser = { name, username, email, mobile, shareData }
+            localStorage.setItem("currentUser", JSON.stringify(currentUser));
+            // localStorage.setItem("currentUser", JSON.stringify({ name, username, email, mobile, shareData }));
+        }
+        console.log(JSON.parse(localStorage.getItem("currentUser")));
+    };
 
     return (
         <div className={styles.page}>
             <div className={styles.left}>
-                <h1>Discover new things on <br /> Superapp</h1>
-                <img src={bgImage} className={bgImage} alt="background" />
+                <h1 className={styles.leftHeader}>Discover new things on <br /> Superapp</h1>
+                <img src={bgImage} className={styles.bgImage} alt="background" />
             </div>
             <div className={styles.right}>
                 <div>
@@ -43,7 +51,7 @@ function Registration() {
                     <br />
                     <div>
                         <input type="checkbox" value={shareData}
-                            onChange={(e) => setShareData(true)}
+                            onChange={(e) => setShareData(e.target.checked)}
                         />
                         <label htmlFor="">Share my registration data with Superapp</label>
                     </div>
