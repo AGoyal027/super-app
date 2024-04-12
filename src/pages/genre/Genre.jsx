@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import actionImg from "../../assets/action.png"
 import styles from "./GenrePage.module.css"
 import { IoWarning } from "react-icons/io5";
@@ -48,6 +48,18 @@ function GenrePage() {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [warning, setWarning] = useState(false);
 
+    // useEffect -> 1) component mounting
+    //              2) state change
+    //              3) component unmounting   
+
+    useEffect(() => {
+        if (selectedGenres.length >= 3) {
+            setWarning(false);
+        }
+        localStorage.setItem("selectedGenres", JSON.stringify(selectedGenres));
+        console.log(localStorage.getItem("selectedGenres"));
+    }, [selectedGenres])
+
     const removeGenre = (index) => {
         // console.log(index);
         const newGenre = selectedGenres.filter((item) => item !== index);
@@ -55,9 +67,7 @@ function GenrePage() {
     };
 
     const selectGenre = (index) => {
-        if (selectedGenres.length === 2) {
-            setWarning(false);
-        }
+        if (selectedGenres.includes(index)) return;
         setSelectedGenres([...selectedGenres, index]);
     }
 
@@ -65,7 +75,7 @@ function GenrePage() {
         if (selectedGenres.length < 3) {
             setWarning(true);
         } else {
-            alert(' to next page');
+            setWarning(false);
         }
     }
 

@@ -14,8 +14,11 @@ function Registration() {
         if (!name || !username || !email || !mobile  || !shareData) {
             alert("Please fill all fields");
         } else {
-            alert("Sign Up")
+            const currentUser = { name, username, email, mobile, shareData }
+            localStorage.setItem("currentUser", JSON.stringify(currentUser));
+            // localStorage.setItem("currentUser", JSON.stringify({ name, username, email, mobile, shareData }));
         }
+        console.log(JSON.parse(localStorage.getItem("currentUser")));
     };
 
     return (
