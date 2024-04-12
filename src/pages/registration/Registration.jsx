@@ -14,11 +14,8 @@ function Registration() {
         if (!name || !username || !email || !mobile  || !shareData) {
             alert("Please fill all fields");
         } else {
-            const currentUser = { name, username, email, mobile, shareData }
-            localStorage.setItem("currentUser", JSON.stringify(currentUser));
-            // localStorage.setItem("currentUser", JSON.stringify({ name, username, email, mobile, shareData }));
+            alert("Sign Up")
         }
-        console.log(JSON.parse(localStorage.getItem("currentUser")));
     };
 
     return (
@@ -59,10 +56,10 @@ function Registration() {
                 </div>
                 <div>
                     {/* <button onClick={handleSubmit}>SIGN UP</button> */}
-                    <p>
+                    <p className={styles.terms}>
                         By clicking on Sign up. you agree to Superapp <span>Terms and Conditions of Use</span>
                     </p>
-                    <p>
+                    <p className={styles.terms}>
                         To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp <span>Privacy Policy</span>
                     </p>
                 </div>

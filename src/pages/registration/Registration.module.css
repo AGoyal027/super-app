@@ -29,7 +29,6 @@ body {
     left: 5%;
     font-size: 3rem;
     font-family: "Roboto", sans-serif;
-    /* flex 0 0 calc(100/(no of items per line) - gap) */
 }
 
 .bgImage {
@@ -38,11 +37,6 @@ body {
     width: 100%;
 }
 
-h1{
-    position: absolute;
-    bottom: 5%;
-    left: 2%;
-}
 
 .right {
     width: 50%;
@@ -52,10 +46,10 @@ h1{
     align-items: center;
 }
 
-h2 {
+.right h2 {
     font-family: "Single Day", cursive;
     color: #72DB73;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: lighter;
 }
 
@@ -81,7 +75,7 @@ label{
     color: #7C7C7C;
 }
 
-p{
+.terms{
     width: 70%;
     color: #7C7C7C;
     font-family: "Roboto", sans-serif;
