@@ -1,49 +1,11 @@
 import React, { useState, useEffect } from "react";
-import actionImg from "../../assets/action.png"
-import styles from "./GenrePage.module.css"
+import {genres} from "../../assets/data/genres";
+import styles from "./GenrePage.module.css";
 import { IoWarning } from "react-icons/io5";
 
-function GenrePage() {
-    const genres = [
-        {
-            title: "Action",
-            bgImage: actionImg,
-        },
-        {
-            title: "Drama",
-            bgImage: actionImg,
-        },
-        {
-            title: "Romance",
-            bgImage: actionImg,
-        },
-        {
-            title: "Thriller",
-            bgImage: actionImg,
-        },
-        {
-            title: "Western",
-            bgImage: actionImg,
-        },
-        {
-            title: "Horror",
-            bgImage: actionImg,
-        },
-        {
-            title: "Fantasy",
-            bgImage: actionImg,
-        },
-        {
-            title: "Music",
-            bgImage: actionImg,
-        },
-        {
-            title: "Fiction",
-            bgImage: actionImg,
-        },
-    ]
+export function GenrePage() {
 
-    const bgColors = ["#FF5209", "#D7A4FF", "#148A08", "#84C2FF", "#902500", "#7358FF", "#FF4ADE", "#E61E32", "#6CD061"]
+    const bgColors = ["#FF5209", "#D7A4FF", "#148A08", "#84C2FF", "#902500", "#7358FF", "#FF4ADE", "#E61E32", "#6CD061"];
 
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [warning, setWarning] = useState(false);
@@ -51,14 +13,13 @@ function GenrePage() {
     // useEffect -> 1) component mounting
     //              2) state change
     //              3) component unmounting   
-
     useEffect(() => {
         if (selectedGenres.length >= 3) {
             setWarning(false);
         }
         localStorage.setItem("selectedGenres", JSON.stringify(selectedGenres));
         console.log(localStorage.getItem("selectedGenres"));
-    }, [selectedGenres])
+    }, [selectedGenres]);
 
     const removeGenre = (index) => {
         // console.log(index);
@@ -69,7 +30,7 @@ function GenrePage() {
     const selectGenre = (index) => {
         if (selectedGenres.includes(index)) return;
         setSelectedGenres([...selectedGenres, index]);
-    }
+    };
 
     const handleNext = () => {
         if (selectedGenres.length < 3) {
@@ -77,7 +38,7 @@ function GenrePage() {
         } else {
             setWarning(false);
         }
-    }
+    };
 
     return (
         <div className={styles.page}>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bgImage from "../../assets/image 13.png"
+import bgImage from "../../assets/images/image 13.png"
 import styles from "./Registration.module.css"
 
 function Registration() {

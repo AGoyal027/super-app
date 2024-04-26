@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registration from "./pages/registration/Registration";
-import Genre from "./pages/genre/Genre";
+import GenrePage from "./pages/genre/GenrePage";
+import HomePage from "./pages/homepage/Homepage"
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Registration />} />
-          <Route path="/genre" element={<Genre />} />
+          <Route path="/genre" element={<GenrePage />} />
+          <Route path="/homepage" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </div>
