@@ -1,0 +1,9 @@
+.userWidget{
+    background-color: #5746EA;
+    color: #fff;
+}
+
+.userWidget img{
+    height: 200px;
+    width: 100px;
+}
