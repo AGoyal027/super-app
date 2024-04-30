@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Homepage.module.css"
 import axios from "axios";
 import UserWidget from "../../components/UserWidget";
+import WeatherWidget from "../../components/WeatherWidget";
 import NewsWidget from "../../components/NewsWidget";
 
 function Homepage() {
@@ -51,7 +52,7 @@ function Homepage() {
         <div className={styles.page}>
             <div className={styles.left}>
                 {user && <UserWidget user={user} selectedGenres={selectedGenres} />}
-                <div className={styles.weatherWidget}></div>
+                {weather && <WeatherWidget weather={weather} />}
             </div>
             <div className={styles.right}>
                 {news && <NewsWidget news={news} />}

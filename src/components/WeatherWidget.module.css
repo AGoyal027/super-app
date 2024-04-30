@@ -1,0 +1,18 @@
+.weatherWidget{
+    display: flex;
+    flex-direction: column;
+    background-color: #101744;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FF4ADE;
+}
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}
