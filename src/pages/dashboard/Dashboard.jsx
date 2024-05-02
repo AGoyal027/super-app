@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
 // import UserWidget from "../../components/UserWidget";
+import NotesWidget from "../../components/NotesWidget";
 
 function Dashboard() {
     return (
@@ -10,6 +11,7 @@ function Dashboard() {
                 {/* <UserWidget /> */}
             </div>
             <div className={styles.notesWidget}>
+                <NotesWidget />
             </div>
             <div className={styles.timerWidget}></div>
             <div className={styles.weatherWidget}></div>
